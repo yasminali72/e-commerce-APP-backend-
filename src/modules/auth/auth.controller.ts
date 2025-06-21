@@ -1,10 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 
 @Controller('auth')
 export class AuthenticationController {
   constructor() {}
-  @Get('signup')
-  signup() {
+  @Post('signup')
+  signup(@Body() Body: any) {
+    console.log(Body);
+
     return 'signup';
   }
 
